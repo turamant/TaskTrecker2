@@ -15,9 +15,9 @@ def init_db():
 @click.command('init-db')
 @with_appcontext
 def init_db_command():
-    """Clear the existing data and create new tables."""
+    """Очистить существующие данные и создать новые таблицы."""
     init_db()
-    click.echo('Initialized the database.')
+    click.echo('База данныз инициализирована.')
 
 def init_app(app):
     app.teardown_appcontext(close_db)
