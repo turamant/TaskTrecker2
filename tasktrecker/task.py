@@ -28,7 +28,7 @@ def create():
         error = None
 
         if not title:
-            error = 'Title is required.'
+            error = 'Требуется заголовок.'
 
         if error is not None:
             flash(error)
@@ -53,7 +53,7 @@ def get_task(id, check_author=True):
     ).fetchone()
 
     if task is None:
-        abort(404, f"Task id {id} doesn't exist.")
+        abort(404, f"Задание с таким id {id} не существует.")
 
     if check_author and task['author_id'] != g.user['id']:
         abort(403)
@@ -71,7 +71,7 @@ def update(id):
         error = None
 
         if not title:
-            error = 'Title is required.'
+            error = 'Требуется заголовок.'
 
         if error is not None:
             flash(error)
